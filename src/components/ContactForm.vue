@@ -1,5 +1,5 @@
 <template>
-  <div class="relative max-w-xl mx-auto bg-[#FFA4A4] p-10 rounded-xl shadow-md">
+  <div class="relative max-w-xl mx-auto bg-[ #FFA4A4] p-10 rounded-xl shadow-md">
 
     <div class="mb-4">
       <label class="font-semibold">Fullname</label>
