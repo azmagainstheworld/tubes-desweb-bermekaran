@@ -1,29 +1,32 @@
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { products } from "../data/products.js";
+import Button from "../components/Button.vue";
 
 const route = useRoute();
-const id = Number(route.params.id);
+const router = useRouter();
 
+const id = Number(route.params.id);
 const product = products.find(p => p.id === id);
+
+const goToContact = () => {
+  router.push("/contact");
+};
 </script>
 
 <template>
   <div class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
 
-    <!-- KONTEN PRODUK -->
     <div
       v-if="product"
       class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
     >
-      <!-- BAGIAN KIRI = GAMBAR DALAM CARD PINK -->
       <div
         class="bg-[#FFEAEA] rounded-3xl p-10 flex items-center justify-center shadow-md"
       >
         <img :src="product.image" class="w-[350px] object-contain" />
       </div>
 
-      <!-- BAGIAN KANAN = TEKS -->
       <div class="pr-6">
         <h1 class="text-4xl font-bold text-black mb-4">
           {{ product.title }}
@@ -38,17 +41,11 @@ const product = products.find(p => p.id === id);
           Rp{{ product.price }}
         </p>
 
-        <button
-          class="bg-[#FF7C7C] text-white px-8 py-3 rounded-full
-                 text-lg font-semibold shadow hover:bg-[#ff6565]
-                 transition duration-200"
-        >
-          Order Now
-        </button>
+        <!-- Pakai komponen button -->
+        <Button label="Order Now" @click="goToContact" />
       </div>
     </div>
 
-    <!-- ERROR -->
     <div v-else class="text-center text-red-500 text-xl mt-20">
       Product Not Found
     </div>
@@ -56,7 +53,6 @@ const product = products.find(p => p.id === id);
 </template>
 
 <style scoped>
-/* biar font sama */
 * {
   font-family: "Poppins", sans-serif;
 }

@@ -35,7 +35,7 @@
 
       <!-- Button center -->
       <div class="mt-10 flex justify-center">
-        <Button label="View All" />
+        <Button label="View All" @click="goToProducts" />
       </div>
     </section>
 
@@ -43,8 +43,15 @@
 </template>
 
 <script setup>
-import AboutPreview from '../components/AboutPreview.vue';
+import { useRouter } from 'vue-router'
+import AboutPreview from '../components/AboutPreview.vue'
 import HeroSection from '../components/HeroSection.vue'
-import ProductCard from '../components/ProductCard.vue';
-import Button from '../components/Button.vue';
+import ProductCard from '../components/ProductCard.vue'
+import Button from '../components/Button.vue'
+
+const router = useRouter()
+
+const goToProducts = () => {
+  router.push('/products')
+}
 </script>

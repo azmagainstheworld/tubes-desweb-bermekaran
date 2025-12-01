@@ -1,89 +1,78 @@
 <template>
-  <section class="flex flex-col md:flex-row items-center justify-between py-16 px-6 md:px-16 bg-white">
-    <!-- Kiri: Frame Bunga Satuan -->
-    <div class="w-full md:w-1/2 flex flex-wrap justify-center md:justify-start md:gap-6 mb-10 md:mb-0">
-      <!-- Frame 1 -->
-      <Frame
-        width="140px"
-        height="380px"
-        borderRadius="80px"
-        bgColor="#FFE5E5"
-      >
-        <img
-          src="/src/assets/rose_about.png"
-          alt="Rose About"
-          class="h-full object-contain mx-auto"
-        />
-      </Frame>
+  <!-- Menambahkan md:gap-12 untuk memberi jarak 3rem (48px) antara Frame dan Teks di layar tablet/desktop -->
+  <section class="flex flex-col md:flex-row-reverse items-center md:items-start justify-between py-16 px-4 bg-white max-w-7xl mx-auto md:gap-12">
 
-      <!-- Frame 2 -->
+    <!-- 1. Teks Block (Judul, Deskripsi Desktop/iPad, Tombol Desktop) - order-1 (Mobile) -->
+    <div class="w-full md:w-1/2 text-center md:text-left order-1 md:order-none mb-8 md:mb-0">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-snug">
+        Bermekaran will bringing love and joy<br />
+        through every bloom.
+      </h2>
+
+      <!-- DESKRIPSI DESKTOP/IPAD -->
+      <p class="text-gray-700 mb-8 max-w-lg mx-auto md:mx-0 hidden md:block">
+        Every bouquet we create is more than just a collection of flowers —
+        it’s a story of love, care, and heartfelt emotions, beautifully
+        arranged to brighten someone’s day.
+      </p>
+
+      <!-- Tombol Desktop untuk About -->
+      <div class="hidden md:block mt-8">
+        <!-- Memanggil prop fungsi dari parent saat button diklik -->
+        <Button label="Learn More" class="mx-auto md:mx-0" @click="goToAbout" />
+      </div>
+    </div>
+    
+    <!-- 2. Gambar (Frame) - order-2 (Mobile) -->
+    <div class="w-full md:w-1/2 flex justify-center md:justify-start order-2 md:order-none mb-8 md:mb-0">
       <Frame
-        width="140px"
-        height="380px"
-        borderRadius="80px"
+        width="340px"
+        height="450px"
+        borderRadius="300px"
         bgColor="#FFE5E5"
       >
         <img
           src="/src/assets/lily_about.png"
-          alt="Lily About"
-          class="h-full object-contain mx-auto"
+          alt="Flower Bouquet"
+          class="h-72 w-72 object-contain"
         />
       </Frame>
+    </div>
 
-      <!-- Frame 3 -->
-      <Frame
-        width="140px"
-        height="380px"
-        borderRadius="80px"
-        bgColor="#FFE5E5"
-      >
-        <img
-          src="/src/assets/edelweiss_about.png"
-          alt="Edelweiss About"
-          class="h-full object-contain mx-auto"
-        />
-      </Frame>
-    </div>  
-
-
-    <!-- Kanan: Text + Button -->
-    <div class="w-full md:w-1/2 text-center md:text-left">
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-snug">
-        Bermekaran will bringing love <br />
-        and joy through every bloom.
-      </h2>
-      <p class="text-gray-700 mb-8 max-w-lg mx-auto md:mx-0">
+    <!-- 3. Deskripsi MOBILE - order-3 (Mobile). Tetap tersembunyi di md: ke atas. -->
+    <div class="w-full flex justify-center md:hidden order-3 mt-6">
+      <p class="text-gray-700 text-center max-w-sm">
         Every bouquet we create is more than just a collection of flowers —
         it’s a story of love, care, and heartfelt emotions, beautifully
-        arranged to brighten someone’s day. Inspired by the beauty of nature
-        and the warmth of human connection, we craft each piece with delicate
-        attention to color, texture, and balance.
+        arranged to brighten someone’s day.
       </p>
-
-      <Button label="Learn More" class="mx-auto md:mx-0" />
     </div>
+    
+    <!-- 4. Tombol Mobile untuk About - order-4 (Mobile) -->
+    <div class="w-full flex justify-center mt-8 order-4 md:hidden">
+      <!-- Memanggil prop fungsi dari parent saat button diklik -->
+      <Button label="Learn More" @click="goToAbout" />
+    </div>
+
   </section>
 </template>
 
 <script setup>
-import Frame from './Frame.vue'
-import Button from './Button.vue'
+// Asumsi Button dan Frame adalah komponen yang dapat diimpor
+import Button from './Button.vue';
+import Frame from './Frame.vue';
+
+// Menerima fungsi navigasi sebagai prop dari parent (HomePage.vue)
+const props = defineProps({
+  goToAbout: {
+    type: Function,
+    required: true,
+  },
+});
 </script>
 
 <style scoped>
 section {
   font-family: 'Poppins', sans-serif;
-}
-
-/* Responsive adjustment */
-@media (max-width: 768px) {
-  section {
-    text-align: center;
-    padding-right: 4rem;
-  }
-
-  img {
-    max-height: 180px;
-  }
 }
 </style>
