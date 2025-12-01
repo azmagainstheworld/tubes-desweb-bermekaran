@@ -18,6 +18,6 @@ const routes = [
 ]
 
 export default createRouter({
-  history: createWebHashHistory(),  // <-- ini yang diganti
+  history: createWebHashHistory(),  
   routes
 })
