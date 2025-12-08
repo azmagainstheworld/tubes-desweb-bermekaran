@@ -53,7 +53,7 @@ const closeMenu = () => {
 }
 </script>
 
-<style>
+<style scoped>
 /* Transition */
 .slide-down-enter-active,
 .slide-down-leave-active {
