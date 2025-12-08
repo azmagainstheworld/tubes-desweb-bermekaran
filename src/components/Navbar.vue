@@ -16,8 +16,6 @@
         <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
       </ul>
 
-
-
       <!-- Hamburger (Mobile) -->
       <button @click="toggleMenu" class="md:hidden text-3xl text-gray-800">
         <i :class="isMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
@@ -55,7 +53,7 @@ const closeMenu = () => {
 }
 </script>
 
-<style scoped>
+<style>
 /* Transition */
 .slide-down-enter-active,
 .slide-down-leave-active {
