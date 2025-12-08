@@ -1,7 +1,7 @@
 <template>
   <div
     class="flex items-center justify-center shadow-md transition hover:scale-105 duration-300
-           w-[220px] sm:w-[240px] lg:w-[250px]
+           w-[220px] sm:w-60 lg:w-[250px]
            min-h-[350px] sm:min-h-[380px] lg:min-h-[400px]"
     :style="{
       backgroundColor: bgColor,

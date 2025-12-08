@@ -3,7 +3,7 @@
     class="flex flex-col md:flex-row items-center md:items-start justify-between py-16 px-4 bg-white max-w-7xl mx-auto md:gap-12"
   >
     <!-- TEKS – kiri desktop, atas mobile -->
-    <div class="w-full md:w-1/2 text-center md:text-left order-1 md:order-none mb-8 md:mb-0">
+    <div class="w-full md:w-1/2 text-center md:text-left order-1 md:order-0 mb-8 md:mb-0">
       <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
         A Flower For <br />
         Every Special Moment
@@ -21,7 +21,7 @@
     </div>
 
     <!-- FRAME – kanan desktop, tengah mobile -->
-    <div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-none mb-8 md:mb-0">
+    <div class="w-full md:w-1/2 flex justify-center md:justify-end order-2 md:order-0 mb-8 md:mb-0">
       <Frame
         width="340px"
         height="450px"

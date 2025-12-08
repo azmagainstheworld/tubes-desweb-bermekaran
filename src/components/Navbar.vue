@@ -1,20 +1,22 @@
 <template>
   <nav class="w-full bg-white">
     <!-- Wrapper -->
-    <div class="max-w-[1440px] mx-auto flex items-center justify-between px-6 h-[80px]">
+    <div class="max-w-[1440px] mx-auto flex items-center justify-between px-6 h-20">
       
       <!-- Logo -->
       <div class="flex items-center gap-2">
-        <img src="/src/assets/logodesweb.png" alt="Logo" class="h-35 w-auto" />
+        <img :src="logo" alt="Logo" class="h-35 w-auto" />
       </div>
 
       <!-- Desktop Menu -->
-      <ul class="hidden md:flex flex-1 justify-center gap-10 text-gray-800 font-semibold">
+      <ul class="hidden md:flex flex-1 justify-center gap-[30px] text-gray-800 font-semibold">
         <RouterLink to="/" class="nav-link">Home</RouterLink>
         <RouterLink to="/products" class="nav-link">Products</RouterLink>
         <RouterLink to="/about" class="nav-link">About</RouterLink>
         <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
       </ul>
+
+
 
       <!-- Hamburger (Mobile) -->
       <button @click="toggleMenu" class="md:hidden text-3xl text-gray-800">
@@ -40,6 +42,7 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
+import logo from '../assets/logodesweb.png'
 
 const isMenuOpen = ref(false)
 
