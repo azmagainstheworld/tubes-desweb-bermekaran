@@ -8,7 +8,7 @@
 
     <div class="mb-4">
       <label class="font-semibold">Email Address</label>
-      <input v-model="email" class="w-full p-3 border rounded-xl mt-1 bg-white" placeholder="Value" />
+      <input v-model="email" type="email" class="w-full p-3 border rounded-xl mt-1 bg-white" placeholder="Value" />
     </div>
 
     <div class="mb-4">

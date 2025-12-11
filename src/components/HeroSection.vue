@@ -55,7 +55,7 @@
 import Button from './Button.vue'
 import Frame from './Frame.vue'
 
-// Terima props dari parent
+// nerima props dari parent
 const props = defineProps({
   goToProducts: {
     type: Function,
@@ -63,7 +63,7 @@ const props = defineProps({
   }
 })
 
-// Gunakan props.goToProducts di button
+// pake props.goToProducts di button
 const goToProducts = props.goToProducts
 </script>
 

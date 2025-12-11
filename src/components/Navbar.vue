@@ -13,6 +13,7 @@
         <RouterLink to="/" class="nav-link">Home</RouterLink>
         <RouterLink to="/products" class="nav-link">Products</RouterLink>
         <RouterLink to="/about" class="nav-link">About</RouterLink>
+        <RouterLink to="/skill" class="nav-link">About Me</RouterLink>
         <RouterLink to="/contact" class="nav-link">Contact</RouterLink>
       </ul>
 
@@ -31,6 +32,7 @@
         <RouterLink @click="closeMenu" to="/" class="nav-link">Home</RouterLink>
         <RouterLink @click="closeMenu" to="/products" class="nav-link">Products</RouterLink>
         <RouterLink @click="closeMenu" to="/about" class="nav-link">About</RouterLink>
+        <RouterLink @click="closeMenu" to="/skill" class="nav-link">About Me</RouterLink>
         <RouterLink @click="closeMenu" to="/contact" class="nav-link">Contact</RouterLink>
       </div>
     </transition>

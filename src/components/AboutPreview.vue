@@ -2,7 +2,7 @@
   <section
     class="flex flex-col md:flex-row-reverse items-center md:items-start justify-between py-16 px-4 bg-white max-w-7xl mx-auto md:gap-12"
   >
-    <!-- 1. Teks Block (Judul, Deskripsi Desktop/iPad, Tombol Desktop) -->
+    
     <div class="w-full md:w-1/2 text-center md:text-left order-1 md:order-0 mb-8 md:mb-0">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-snug">
         Bermekaran will bringing love and joy<br />
